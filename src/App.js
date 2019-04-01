@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import Table from "Table.jsx";
 import axios from "axios";
-import Search from "Search.jsx"''
+import Search from "Search.jsx";
+import Button from "Button.jsx";
 
 const DEFAULT_QUERY = "react";
 const DEFAULT_HPP = "100";
@@ -119,12 +120,24 @@ class App extends Component {
     return (
       <div className='App'>
         <div>
-          <Search value={searchTerm} onChange={this.onSearchChange} onSubmit={this.onSearchSubmit}>Search</Search>
+          <Search
+            value={searchTerm}
+            onChange={this.onSearchChange}
+            onSubmit={this.onSearchSubmit}>
+            Search
+          </Search>
         </div>
-        { error ? <div><p>Something went wrong</p></div>: <Table list={list} onDismiss={this.onDismiss} /> }
+        {error ? (
+          <div>
+            <p>Something went wrong</p>
+          </div>
+        ) : (
+          <Table list={list} onDismiss={this.onDismiss} />
+        )}
         <div>
-          <ButtonWithLoading isLoading={isLoading} onClick={()=> this.fetchSearchTopStories(searchKey, page + 1)}
-          >
+          <ButtonWithLoading
+            isLoading={isLoading}
+            onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
             More
           </ButtonWithLoading>
         </div>
@@ -133,11 +146,11 @@ class App extends Component {
   }
 }
 
-const Loading = () => <div>Loading ...</div>
+const Loading = () => <div>Loading ...</div>;
 
-const withLoading = (Component) => ({ isLoading, ...rest}) => 
-  isLoading? <Loading />: <Component {...rest} />
+const withLoading = Component => ({ isLoading, ...rest }) =>
+  isLoading ? <Loading /> : <Component {...rest} />;
 
-const ButtonWithLoading = withLoading(Button);  
+const ButtonWithLoading = withLoading(Button);
 
 export default App;
