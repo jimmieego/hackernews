@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import Table from "Table.jsx";
+import Button from "./Button.js";
+import Table from "./Table.js";
 import axios from "axios";
-import Search from "Search.jsx";
-import Button from "Button.jsx";
+import Search from "./Search.js";
 
 const DEFAULT_QUERY = "react";
 const DEFAULT_HPP = "100";
@@ -13,18 +13,6 @@ const PATH_SEARCH = "/search";
 const PARAM_SEARCH = "query=";
 const PARAM_PAGE = "page=";
 const PARAM_HPP = "hitsPerPage=";
-
-const largeColum = {
-  width: "40%"
-};
-
-const midColumn = {
-  width: "30%"
-};
-
-const smallColumn = {
-  width: "10%"
-};
 
 const updateSearchTopStoriesState = (hits, page) => prevState => {
   const { searchKey, results } = prevState;
@@ -118,7 +106,7 @@ class App extends Component {
       (results && results[searchKey] && results[searchKey].hits) || [];
 
     return (
-      <div className='App'>
+      <div className='page'>
         <div>
           <Search
             value={searchTerm}
