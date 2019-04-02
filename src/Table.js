@@ -12,11 +12,11 @@ const SORTS = {
 };
 
 const largeColumn = {
-  width: "40%"
+  width: "55%"
 };
 
 const midColumn = {
-  width: "30%"
+  width: "15%"
 };
 
 const smallColumn = {
