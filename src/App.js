@@ -14,21 +14,6 @@ const PARAM_SEARCH = "query=";
 const PARAM_PAGE = "page=";
 const PARAM_HPP = "hitsPerPage=";
 
-const updateSearchTopStoriesState = (hits, page) => prevState => {
-  const { searchKey, results } = prevState;
-
-  const oldHits = results && results[searchKey] ? results[searchKey].hits : [];
-  const updatedHits = [...oldHits, ...hits];
-
-  return {
-    results: {
-      ...results,
-      [searchKey]: { hits: updatedHits, page }
-    },
-    isLoading: false
-  };
-};
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -48,7 +33,18 @@ class App extends Component {
 
   setSearchTopStories = result => {
     const { hits, page } = result;
-    this.setState(updateSearchTopStoriesState(hits, page));
+    const { searchKey, results } = this.state;
+
+    const oldHits =
+      results && results[searchKey] ? results[searchKey].hits : [];
+    const updatedHits = [...oldHits, ...hits];
+
+    this.setState({
+      results: {
+        ...results,
+        [searchKey]: { hits: updatedHits, page }
+      }
+    });
   };
 
   fetchSearchTopStories = (searchTerm, page = 0) => {
@@ -97,10 +93,10 @@ class App extends Component {
   };
 
   render() {
-    const { searchTerm, results, searchKey, error, isLoading } = this.state; //deconstruct the state
+    const { searchTerm, results, searchKey, error } = this.state; //deconstruct the state
 
     const page =
-      (results && results[searchKey] && results[searchKey].hits) || [];
+      (results && results[searchKey] && results[searchKey].page) || 0;
 
     const list =
       (results && results[searchKey] && results[searchKey].hits) || [];
@@ -123,22 +119,14 @@ class App extends Component {
           <Table list={list} onDismiss={this.onDismiss} />
         )}
         <div>
-          <ButtonWithLoading
-            isLoading={isLoading}
+          <Button
             onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
             More
-          </ButtonWithLoading>
+          </Button>
         </div>
       </div>
     );
   }
 }
-
-const Loading = () => <div>Loading ...</div>;
-
-const withLoading = Component => ({ isLoading, ...rest }) =>
-  isLoading ? <Loading /> : <Component {...rest} />;
-
-const ButtonWithLoading = withLoading(Button);
 
 export default App;
