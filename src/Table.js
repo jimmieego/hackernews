@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import Button from "./Button.js";
 import { sortBy } from "lodash";
 import classNames from "classnames";
+import PropTypes from "prop-types";
+
+Table.propTypes = {
+  list: PropTypes.array.isRequired,
+  onDismiss: PropTypes.func.isRequired
+};
 
 const SORTS = {
   NONE: list => list,
