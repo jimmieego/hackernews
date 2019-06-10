@@ -22,7 +22,8 @@ class App extends Component {
       results: null,
       searchKey: "",
       searchTerm: DEFAULT_QUERY,
-      error: null
+      error: null,
+      isLoading: false
     };
   }
 
@@ -42,7 +43,8 @@ class App extends Component {
       results: {
         ...results,
         [searchKey]: { hits: updatedHits, page }
-      }
+      },
+      isLoading: false
     });
   };
 
@@ -92,7 +94,7 @@ class App extends Component {
   };
 
   render() {
-    const { searchTerm, results, searchKey, error } = this.state; //deconstruct the state
+    const { searchTerm, results, searchKey, error, isLoading } = this.state; //deconstruct the state
 
     const page =
       (results && results[searchKey] && results[searchKey].page) || 0;
@@ -118,14 +120,20 @@ class App extends Component {
           <Table list={list} onDismiss={this.onDismiss} />
         )}
         <div>
-          <Button
-            onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
-            More
-          </Button>
+          {isLoading ? (
+            <Loading />
+          ) : (
+            <Button
+              onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
+              More
+            </Button>
+          )}
         </div>
       </div>
     );
   }
 }
+
+const Loading = () => <div>Loading ...</div>;
 
 export default App;

@@ -5,12 +5,7 @@ const Search = ({ value, onChange, onSubmit, children }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input
-        type='text'
-        value={value}
-        onChange={onChange}
-        ref={el => (this.input = el)}
-      />
+      <input type='text' value={value} onChange={onChange} />
       <button type='submit'>{children}</button>
     </form>
   );
