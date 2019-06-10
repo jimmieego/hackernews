@@ -5,6 +5,10 @@ import Search from "./Search";
 import Button from "./Button";
 import Table from "./Table";
 import renderer from "react-test-renderer";
+import Enzyme, { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe("App", () => {
   test("has a valid snapshot", () => {
@@ -62,5 +66,10 @@ describe("Table", () => {
     const component = renderer.create(<Table {...props} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+  it("shows two items in list", () => {
+    const element = shallow(<Table {...props} />);
+
+    expect(element.find(".table-row").length).toBe(2);
   });
 });
