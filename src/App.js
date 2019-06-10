@@ -112,7 +112,7 @@ class App extends Component {
         </div>
         {error ? (
           <div>
-            <p>Something went wrong</p>
+            <p>Something went wrong.</p>
           </div>
         ) : (
           <Table list={list} onDismiss={this.onDismiss} />
