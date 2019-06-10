@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App has a valid snapshot 1`] = `
+<div
+  className="page"
+>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        onChange={[Function]}
+        type="text"
+        value="react"
+      />
+      <button
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+  <table
+    className="table"
+  >
+    <thead
+      className="table-header"
+    >
+      <tr>
+        <th
+          style={
+            Object {
+              "width": "40%",
+            }
+          }
+        >
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="button"
+          >
+            Title
+          </button>
+        </th>
+        <th
+          style={
+            Object {
+              "width": "30%",
+            }
+          }
+        >
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="button"
+          >
+            Author
+          </button>
+        </th>
+        <th
+          style={
+            Object {
+              "width": "10%",
+            }
+          }
+        >
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="button"
+          >
+            Comments
+          </button>
+        </th>
+        <th
+          style={
+            Object {
+              "width": "10%",
+            }
+          }
+        >
+          <button
+            className="button-inline"
+            onClick={[Function]}
+            type="button"
+          >
+            Points
+          </button>
+        </th>
+        <th
+          style={
+            Object {
+              "width": "10%",
+            }
+          }
+        >
+          Archive
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+  <div>
+    <button
+      className=""
+      onClick={[Function]}
+      type="button"
+    >
+      More
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Button has a valid snapshot 1`] = `
+<button
+  className=""
+  type="button"
+>
+  Give Me More
+</button>
+`;
+
+exports[`Search has a valid snapshot 1`] = `
+<form>
+  <input
+    type="text"
+  />
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+`;
+
+exports[`Table has a valid snapshot 1`] = `
+<table
+  className="table"
+>
+  <thead
+    className="table-header"
+  >
+    <tr>
+      <th
+        style={
+          Object {
+            "width": "40%",
+          }
+        }
+      >
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="button"
+        >
+          Title
+        </button>
+      </th>
+      <th
+        style={
+          Object {
+            "width": "30%",
+          }
+        }
+      >
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="button"
+        >
+          Author
+        </button>
+      </th>
+      <th
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="button"
+        >
+          Comments
+        </button>
+      </th>
+      <th
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        <button
+          className="button-inline"
+          onClick={[Function]}
+          type="button"
+        >
+          Points
+        </button>
+      </th>
+      <th
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        Archive
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="table-row"
+    >
+      <td
+        style={
+          Object {
+            "width": "55%",
+          }
+        }
+      >
+        <a>
+          1
+        </a>
+      </td>
+      <td
+        style={
+          Object {
+            "width": "15%",
+          }
+        }
+      >
+        1
+      </td>
+      <td
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        1
+      </td>
+      <td
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        2
+      </td>
+      <td>
+        <button
+          className=""
+          onClick={[Function]}
+          type="button"
+        >
+          Dismiss
+        </button>
+      </td>
+    </tr>
+    <tr
+      className="table-row"
+    >
+      <td
+        style={
+          Object {
+            "width": "55%",
+          }
+        }
+      >
+        <a>
+          2
+        </a>
+      </td>
+      <td
+        style={
+          Object {
+            "width": "15%",
+          }
+        }
+      >
+        2
+      </td>
+      <td
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        1
+      </td>
+      <td
+        style={
+          Object {
+            "width": "10%",
+          }
+        }
+      >
+        2
+      </td>
+      <td>
+        <button
+          className=""
+          onClick={[Function]}
+          type="button"
+        >
+          Dismiss
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
